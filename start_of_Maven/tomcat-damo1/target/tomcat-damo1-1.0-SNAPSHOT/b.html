@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+    a{
+        color: #ffffff;
+    }
+    h1{
+        /*文字对齐*/
+        text-align: center;
+    }
+</style>
+
+<body>
+<h1>spring-boot</h1>
+<!--table-striped:斑马线格式，table-bordered：带边框的表格，table-hover：鼠标悬停高亮的表格-->
+<table class="table table-striped table-bordered table-hover text-center">
+    <thead>
+    <tr style="text-align:center">
+        <!--        th标签定义html表格中的表头单元格-->
+        <th>编号</th>
+        <th>地址</th>
+        <th>诊所名</th>
+        <th>发帖时间</th>
+
+    </tr>
+    </thead>
+    <!--tr标签定义html表格中的所有行-->
+    <!--    遍历集合，如果被遍历的变量users为null或者不存在，则不会进行遍历，也不会报错-->
+    <tr th:each="user:${users}">
+        <!--        td标签定义html表格中的标准单元格-->
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td>
+            <!--         a标签用来定义超链接 href表示超链接-->
+            <a class="btn btn-primary" th:href="@{'/updatePage/'+${user.id}}">更改</a>
+            <a class="btn btn-danger" th:href="@{'/delete/'+${user.id}}">删除</a>
+            <a class="btn btn-danger" th:href="@{'/delete/'+${user.id}}">详情</a>
+        </td>
+    </tr>
+</table>
+<button class="btn btn-block" ><a href="/add.html">添加用户</a></button>
+
+</body>
+
+</html>
+

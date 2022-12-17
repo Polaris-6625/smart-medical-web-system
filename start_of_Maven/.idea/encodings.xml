@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/tomcat-damo1/src/main/java/com/web/TalkR.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tomcat-damo1/src/main/java/com/web/addMainInf.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tomcat-damo1/src/main/java/com/web/registServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tomcat-damo1/src/main/java/com/web/test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tomcat-damo1/src/main/java/example/TalkServerSocket.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

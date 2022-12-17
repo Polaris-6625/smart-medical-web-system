@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript" charset="UTF-8"></script>
+    <link rel="stylesheet" href="new_file.css">
+</head>
+<body>
+<div id="app">
+    <table class="layui-table" id="table">
+        <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>地址</th>
+            <th>发帖时间</th>
+            <th>诊所名</th>
+            <th>评分</th>
+            <th>操作</th>
+        </tr>
+        <thead v-for="(mainInf,i) in mInfAll">
+        <tr>
+            <th>{{mainInf.id}}</th>
+            <th>{{mainInf.place}}</th>
+            <th>{{mainInf.time}}</th>
+            <th>{{mainInf.name}}</th>
+            <th>{{mainInf.score}}</th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+
+</body>
+
+<script>
+    new Vue({
+        el:"#app",
+        data() {
+            return {
+                mInfAll: []
+            }
+        },
+        mounted(){
+            var _this = this;
+            axios({
+                method:"get",
+                url:"http://localhost:8080/tomcat-damo1/findAllServlet"
+            }).then(function (resp) {
+                _this.mInfAll = resp.data;
+                var cdId = _this.mInfAll;
+            })
+
+        }
+    })
+</script>
+<script src="vue/vue.js"></script>
+<script src="axios.js"></script>
+</html>

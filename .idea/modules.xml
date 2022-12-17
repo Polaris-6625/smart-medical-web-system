@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/start_of_Maven/start_of_Maven.iml" filepath="$PROJECT_DIR$/start_of_Maven/start_of_Maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/start_of_Maven0.iml" filepath="$PROJECT_DIR$/.idea/start_of_Maven0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/start_of_Maven/tomcat-damo1/tomcat-damo1.iml" filepath="$PROJECT_DIR$/start_of_Maven/tomcat-damo1/tomcat-damo1.iml" />
+    </modules>
+  </component>
+</project>

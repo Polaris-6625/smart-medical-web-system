@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="layui/css/layui.css">
+    <meta charset="UTF-8">
+    <title>智能牙医系统</title>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+    </style>
+    <style>
+        html,body{
+
+            margin: 0 auto;
+            padding: 0px;
+        }
+        .loading-screen{
+            width: 100%;
+            height: 100vh;
+            background-color: #7bed9f;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+        }
+        .loading-screen::before{
+            content: "";
+            position: relative;
+            left: 20%;
+            width: 6rem;
+            height: 6rem;
+            background-color: #ffa502;
+            border-radius: 1.5rem;
+            transform: translateX(-50%) rotate(0);
+            animation: loading 4s infinite linear;
+        }
+        @keyframes loading{
+            50%{
+                left: 80%;
+            }
+            to{
+                transform: translateX(-50%) rotate(1440deg);
+            }
+        }
+        a{
+            color: #ffffff;
+        }
+        h1{
+            /*文字对齐*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div style="height: 100%;width: 100px;background-color: #09d07d;">
+        <div style="width: 100%;height: 60px;background-color: #1E9FFF">
+            菜单
+        </div>
+        <div style="width: 100%;height: 25px;background-color: orange">
+        </div>
+        <div style="width: 100%;height: 60px;background-color: #1E9FFF">
+            <a href="">信息展览馆</a>
+        </div>
+        <div style="width: 100%;height: 25px;background-color: orange">
+        </div>
+        <div style="width: 100%;height: 60px;background-color: #1E9FFF">
+            <a href="">互助咨询</a>
+        </div>
+        <div style="width: 100%;height: 25px;background-color: orange">
+        </div>
+        <div style="width: 100%;height: 60px;background-color: #1E9FFF">
+            <a href="Main_xx.html">休息一下</a>
+        </div>
+        <div style="width: 100%;height: 25px;background-color: orange">
+        </div>
+        <div style="width: 100%;height: 60px;background-color: #1E9FFF">
+            <a href="">我的信息</a>
+        </div>
+        <div style="width: 100%;height: 25px;background-color: orange">
+        </div>
+        <div style="width: 100%;height: 100%;background-color: #1E9FFF">
+            知=====科<br/>识=====技<br/>改=====改<br/>变=====变<br/>命=====未<br/>运=====来
+        </div>
+</div>
+<div style="height: 100%;width: 200px;background-color: #09d07d;">
+</div>
+
+
+<!--    <div class="loading-screen" style="height: 100%;width: 100%;"></div>-->
+<!--    <div class="loading-screen" style="height: 100%;width: 100%;"></div>-->
+<!--    <div class="loading-screen" style="height: 100%;width: 100%;"></div>-->
+<!--    <table class="table table-striped table-bordered table-hover text-center">-->
+<!--        <thead>-->
+<!--        <tr style="text-align:center">-->
+<!--            &lt;!&ndash;        th标签定义html表格中的表头单元格&ndash;&gt;-->
+<!--            <th>编号</th>-->
+<!--            <th>姓名</th>-->
+<!--            <th>密码</th>-->
+<!--            <th>操作</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        &lt;!&ndash;tr标签定义html表格中的所有行&ndash;&gt;-->
+<!--        &lt;!&ndash;    遍历集合，如果被遍历的变量users为null或者不存在，则不会进行遍历，也不会报错&ndash;&gt;-->
+<!--        <tr th:each="user:${users}">-->
+<!--            &lt;!&ndash;        td标签定义html表格中的标准单元格&ndash;&gt;-->
+<!--            <td th:text="${user.id}"></td>-->
+<!--            <td th:text="${user.username}"></td>-->
+<!--            <td th:text="${user.password}"></td>-->
+<!--            <td>-->
+<!--                &lt;!&ndash;         a标签用来定义超链接 href表示超链接&ndash;&gt;-->
+<!--                <a class="btn btn-primary" th:href="@{'/updatePage/'+${user.id}}">更改</a>-->
+<!--                <a class="btn btn-danger" th:href="@{'/delete/'+${user.id}}">删除</a>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
+    <button class="btn btn-block" ><a href="/add.html">添加用户</a></button>
+
+</div>
+<script src="layui/layui.js" type="text/javascript" charset="UTF-8"></script>
+</body>
+</html>

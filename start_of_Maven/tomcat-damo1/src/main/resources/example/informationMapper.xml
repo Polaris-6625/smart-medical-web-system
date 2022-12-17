@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="example.informationMapper">
+    <insert id="addInf">
+        insert into information (username,password,sex,per,realname) values (#{username},
+                                                                             #{password},
+                                                                             #{sex},
+                                                                             #{per},
+                                                                             #{realname});
+    </insert>
+    <insert id="addMInf">
+        insert into main_inf (place,time,name,score,description) values (
+                                                                            #{place},
+                                                                            #{time},
+                                                                            #{name},
+                                                                            #{score},
+                                                                            #{description}
+                                                                        )
+    </insert>
+    <insert id="addTalk">
+        insert into talk (talkInformation) values (#{Tsingle});
+    </insert>
+    <update id="changeData">
+        update main_inf set place = #{place},time = #{time},name = #{name},description = #{description},score = #{score} where id = #{id};
+    </update>
+    <update id="changeUsers">
+        update information set password = #{password} where username = #{username};
+    </update>
+    <delete id="deleteSingle">
+        delete from main_inf where id = #{id};
+    </delete>
+
+
+    <select id="search" resultType="example.userInformation">
+        select * from information where username = #{username} and password = #{password};
+    </select>
+    <select id="searchP" resultType="example.userInformation">
+        select username from information where username = #{username};
+    </select>
+    <select id="searchTable" resultType="example.MainInformation">
+        select * from main_inf;
+    </select>
+    <select id="selectTalkAll" resultType="java.lang.String">
+        select talkInformation from talk order by id ASC ;
+    </select>
+    <select id="selectAllInformation" resultType="example.MainInformation">
+        select * from main_inf where id = #{id};
+    </select>
+</mapper>

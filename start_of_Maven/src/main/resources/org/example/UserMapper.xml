@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.UserMapper">
+
+    <insert id="add" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        insert into brand_tb2(name,Qname,ordered,description,status) values
+        (#{name},#{Qname},#{ordered},#{description},#{status});
+    </insert>
+    <update id="change">
+        update brand_tb
+        <set>
+            <if test="name != null and name != '' ">
+                name = #{name},
+            </if>
+            <if test="Qname != null and Qname != '' ">
+                Qname = #{Qname},
+            </if>
+            <if test="ordered != null">
+                ordered = #{ordered},
+            </if>
+            <if test="description != null and description != '' ">
+                description = #{description},
+            </if>
+            <if test="status != null">
+                status = #{status}
+            </if>
+        </set>
+        where id = #{id};
+    </update>
+    <delete id="del">
+        delete from brand_tb where id
+        in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id} #{id} #{id}
+        </foreach>
+    )
+    </delete>
+
+    <select id="selectALL" resultType="org.example.User">
+        select * from brand_tb;
+    </select>
+    <select id="selectById" resultType="org.example.User">
+        select * from brand_tb where id = #{param1};
+    </select>
+    <select id="selectSome" resultType="org.example.User">
+        select * from brand_tb
+        <where>
+        <if test="status != null">
+            and status = #{status}
+        </if>
+        <if test="name != null and name !='' ">
+            and name like #{name}
+        </if>
+        <if test="Qname != null and Qname!=''">
+            and Qname like #{Qname};
+        </if>
+        </where>
+    </select>
+    <select id="selectSingle" resultType="org.example.User">
+        select * from brand_tb where
+        <choose>
+            <when test="status != null and status != '' ">
+                status = #{status}
+            </when>
+            <when test="name != null and name  != ''">
+                name = #{name}
+            </when>
+            <when test="Qname != null and Qname != ''">
+                Qname = #{Qname}
+            </when>
+            <otherwise>
+                true
+            </otherwise>
+        </choose>
+    </select>
+
+</mapper>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="new_file.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .loading-screen{
+            width: 100%;
+            height: 100vh;
+            background-color: #7bed9f;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+        }
+        .loading-screen::before{
+            content: "";
+            position: relative;
+            left: 20%;
+            width: 6rem;
+            height: 6rem;
+            background-color: #ffa502;
+            border-radius: 1.5rem;
+            transform: translateX(-50%) rotate(0);
+            animation: loading 4s infinite linear;
+        }
+        @keyframes loading{
+            50%{
+                left: 80%;
+            }
+            to{
+                transform: translateX(-50%) rotate(1440deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div>
+    <ul class="layui-nav" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="javascript:;">设置</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="login.html">退出</a></dd>
+                <dd><a href="Main_new.html">返回</a></dd>
+                <dd><a href="">修改密码</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <div class="layui-row">
+        <div class="layui-col-md3">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">菜单</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="Main_new.html">信息展览馆</a></dd>
+                        <dd><a href="talk.html">互助咨询</a></dd>
+                        <dd><a href="Main_re.html">休息一下</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">其他</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">观看视频</a></dd>
+                        <dd><a href="">消息记录</a></dd>
+
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">管理员申请</a></li>
+                <li class="layui-nav-item"><a href="Main_email.html">客服邮箱</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="layui-col-md9">
+                <span class="f9"><a href="Main_new.html">修改密码完成，点击返回主菜单</a> </span>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="loading-screen" style="height: 100%;width: 100%;"></div>
+<div class="loading-screen" style="height: 100%;width: 100%;"></div>
+<div class="loading-screen" style="height: 100%;width: 100%;"></div>
+<div class="loading-screen" style="height: 100%;width: 100%;"></div>
+</div>
+<script src="axios.js"></script>
+<script>
+
+</script>
+</body>
+</html>
